@@ -3,6 +3,6 @@
 
 let pattern = fun x -> x%3=0 || x%5=0
 let sum = List.fold (+) 0
-let find = fun n -> sum ([3..n-1] |> List.filter pattern)
+let find n = sum (List.filter pattern [3..n-1])
 
 find 1000 //val it : int = 233168
