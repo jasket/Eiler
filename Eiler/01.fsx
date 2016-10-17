@@ -2,6 +2,6 @@
 // The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
 
 let pattern = fun x -> x%3=0 || x%5=0
-let find n = List.sum (List.filter pattern [3..n-1])
+let find n = List.filter pattern [3..n-1] |> List.sum
 
 find 1000 //val it : int = 233168
