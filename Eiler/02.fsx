@@ -4,3 +4,6 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, 
 // find the sum of the even-valued terms.
 
+let fibPattern = fun (u,v) -> Some(u,(u+v,u))
+let fib = Seq.unfold fibPattern (1,1)
+Seq.take 10 (Seq.filter (fun x -> x%2=0) fib) |> Seq.toList |> List.sum
