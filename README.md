@@ -1,1 +1,3 @@
-# Eiler
+# Euler Project
+
+Solutions with F#
