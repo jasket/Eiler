@@ -13,5 +13,3 @@ let f2 x = [1. .. x] |> List.sum |> square
 let div x = f2 x - f1 x
 
 div 100.
-
-

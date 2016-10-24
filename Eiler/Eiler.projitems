@@ -10,6 +10,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)01.fsx" />
+    <Compile Include="$(MSBuildThisFileDirectory)07.fsx" />
+    <Compile Include="$(MSBuildThisFileDirectory)06.fsx" />
+    <Compile Include="$(MSBuildThisFileDirectory)05.fsx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)00.test.fsx" />
