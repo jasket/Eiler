@@ -7,6 +7,9 @@ let value = "7316717653133062491922511967442657474235534919493496983520312774506
 let chop (input : string) len = 
     seq { for start in 0 .. 1 .. input.Length / len
         do yield input.[start..start + len - 1] }
-    |> Seq.toArray
 
-chop value 4
+let multy (x:string) = seq { for i in 0 .. 1 .. x.Length-1 do yield (x.[i]) }
+
+let multyStr x = multy x |> Seq.map (string >> int) |> Seq.reduce(fun x y -> x*y)
+
+chop value 13 |> Seq.map(fun (a,b) -> a*b) |> Seq.take 4
