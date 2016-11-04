@@ -9,13 +9,6 @@ let chop (input : string) len =
     seq { for start in 0 .. 1 .. input.Length-len
         do yield input.[start..start + len - 1] }
 let multy (x:string) = seq { for i in 0 .. 1 .. x.Length-1 do yield x.[i] }
-let multyStr x = multy x |> Seq.map (string >> int) |> Seq.reduce(fun x y -> x*y)
+let multyStr x = multy x |> Seq.map (string >> int64) |> Seq.reduce(fun x y -> x*y)
 
-//chop value 13 |> Seq.map multyStr |> Seq.max
-
-chop value 13
-  |> Seq.pairwise 
-  |> Seq.map(fun x -> fst x, fst x |> multyStr) 
-  |> Seq.filter(fun x -> (snd x) > 0) 
-  |> Seq.sortByDescending snd
-  |> Seq.maxBy snd
+chop value 13 |> Seq.map multyStr |> Seq.max
