@@ -20,5 +20,6 @@
     <None Include="$(MSBuildThisFileDirectory)03.fsx" />
     <None Include="$(MSBuildThisFileDirectory)04.fsx" />
     <None Include="$(MSBuildThisFileDirectory)08.fsx" />
+    <None Include="$(MSBuildThisFileDirectory)09.fsx" />
   </ItemGroup>
 </Project>
