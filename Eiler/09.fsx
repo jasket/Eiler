@@ -4,17 +4,14 @@
 //Find the product abc.
 
 let getZ x y n = n - x - y
-let isTriplet x y n = (x**2. + y**2. - (getZ x y n)**2.) = 0.
+let isTriplet x y n = x**2. + y**2. = (getZ x y n)**2.
 
 let cicle n = seq {
     for x in [1.0..n-2.] do 
-        for y in [1.0..n-2.] do
+        for y in [x..n-2.] do
             if(isTriplet x y n) then
                 let z = getZ x y n
-                let sum = x * y * z
-                yield (x, y, z, sum)
+                yield (x, y, z, x * y * z)
 }
 
-//200.0, 375.0, 425.0
-
-cicle 1000. |> Seq.take 1 //val it : seq<float> = seq [31875000.0]
+cicle 1000. //[(200.0, 375.0, 425.0, 31875000.0)]
